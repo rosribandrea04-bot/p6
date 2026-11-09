@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA 6_DISPLAY FLEX</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #F195B9;
+            --secondary-color: #F4E83A;
+            --tertiary-color: #F7773D;
+
+            --font-title: "Yeseva One", serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            font-family: var(--font-title);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* PRIMERA SECTION */
+
+        .container section:first-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color);
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-family: var(--font-title);
+            font-size: 1.5vw;
+            font-weight: 400;
+        }
+
+        /* SEGUNDA SECTION */
+
+        .container section:last-child {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        #amarillo {
+            background-color: var(--secondary-color);
+            flex-grow: 1;
+        }
+
+        #naranja {
+            background-color: var(--tertiary-color);
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 1em;
+        }
+
+        /* MOVIL */
+
+        @media (max-width: 37.5em) {
+
+            .container section:first-child {
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 1em;
+            }
+
+            .container section:first-child h1 {
+                font-size: 2em;
+            }
+
+            .container section:last-child {
+                flex-direction: column;
+            }
+
+            #amarillo {
+                display: none;
+            }
+
+            #naranja h1 {
+                font-size: 2em;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <section>
+            <h1>Hello World</h1>
+        </section>
+
+        <section>
+            <div id="amarillo"></div>
+
+            <div id="naranja">
+                <h1>
+                    <a href="https://www.figma.com/design/xCk91H6ITcEyJzrL0VZZIx/p6?node-id=0-1&t=4ZWcclcTgvqmdpdZ-1">figma</a>
+                </h1>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
